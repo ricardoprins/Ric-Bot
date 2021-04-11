@@ -1,4 +1,4 @@
-# Ric-Bot
+<img src="./assets/logo-transparent.png"/>
 
 This is a Discord bot that we are building for our Discord Guild and the main
 aim for this bot is going to help us manage the server in a better way. 
