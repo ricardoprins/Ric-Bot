@@ -10,9 +10,9 @@ class SecretsStore:
 
     def __init__(self) -> None:
         self.stored_secrets_keys = [
-            "discord_token",
-            "reddit_client_id",
-            "reddit_client_secret"
+            "DISCORD_TOKEN",
+            "REDDIT_CLIENT_ID",
+            "REDDIT_CLIENT_SECRET"
         ]
 
     def get_secret(self, secret_key):

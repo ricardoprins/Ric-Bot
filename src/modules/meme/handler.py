@@ -13,8 +13,8 @@ def get_memes():
    user_agent = "Ric-Bot - Discord bot by Tesseract Coding"
    store = SecretsStore()
    secrets_data = store.get_all_secrets()
-   reddit = praw.Reddit(client_id = secrets_data["reddit_client_id"], 
-                        client_secret = secrets_data["reddit_client_secret"], 
+   reddit = praw.Reddit(client_id = secrets_data["REDDIT_CLIENT_ID"], 
+                        client_secret = secrets_data["REDDIT_CLIENT_SECRET"], 
                         user_agent = user_agent)
    subreddit = reddit.subreddit('funnyterriblefacebookmemes+wholesomememe+ProgrammerHumor+MemeEconomy+memes+dankmemes+AdviceAnimals')
    
