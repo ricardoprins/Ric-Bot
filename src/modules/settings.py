@@ -2,7 +2,7 @@ import os
 import discord
 from os.path import join
 from dotenv import load_dotenv
-from praw import Reddit
+from asyncpraw import Reddit
 
 
 class Settings:

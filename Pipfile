@@ -7,8 +7,8 @@ verify_ssl = true
 
 [packages]
 discord.py = "1.7.1"
-praw = "*"
-python-dotenv = "*"
+asyncpraw = "7.2.0"
+python-dotenv = "0.17.0"
 
 [requires]
 python_version = "3.8"

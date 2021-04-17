@@ -1,7 +1,7 @@
 from discord import Client
-from modules import events
-from modules import memes
-from modules import settings
+from modules.memes import get_memes
+from modules.settings import loadSettings, runDiscordBot
+from modules.quotes import getQuote
 
 
 class Discord(Client):
@@ -16,13 +16,13 @@ class Discord(Client):
             await message.channel.send("pong")
 
         elif message.content == "!memes":
-            await message.channel.send(memes.get_memes())
+            await message.channel.send(await get_memes())
 
-        elif message.content == "!events":
-            await message.channel.send(events.get_events())
+        elif message.content == "!quotes":
+            await message.channel.send(getQuote())
 
 
 def runClient():
-    settings.loadSettings()
+    loadSettings()
     client = Discord()
-    settings.runDiscordBot(client)
+    runDiscordBot(client)
