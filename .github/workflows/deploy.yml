@@ -23,12 +23,14 @@ jobs:
         with:
           # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - uses: Azure/aci-deploy@v1
+      - name: Deploy to Container Instances
+        uses: Azure/aci-deploy@v1
         with:
           resource-group: RicBot
           image: gat786/ric-bot:latest
           name: ric-bot-running
           dns-name-label: ric-bot.southeastasia.azurecontainer.io
           command-line: pipenv run python ./src/main.py
+          location: Southeast Asia
           secure-environment-variables: DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} REDDIT_CLIENT_ID=${{ secrets.REDDIT_CLIENT_ID }} REDDIT_CLIENT_SECRET=${{ secrets.REDDIT_CLIENT_SECRET }}
           
