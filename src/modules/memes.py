@@ -1,16 +1,16 @@
 import random
-from . import settings
+from .settings import loadReddit, getPostLimit, getSubreddits
 
 
-def get_memes():
-    """Function to get and post memes in a discord server """
-    reddit = settings.loadReddit()
-    postLimit = settings.getPostLimit()
-    subreddit = reddit.subreddit(settings.getSubreddits())
+async def get_memes():
+
+    reddit = loadReddit()
+    postLimit = getPostLimit()
+    subreddit = await reddit.subreddit(getSubreddits())
     posts = subreddit.hot(limit=postLimit)
     image_urls, image_titles = [], []
 
-    for post in posts:
+    async for post in posts:
         image_urls.append(post.url.encode("utf-8"))
         image_titles.append(post.title.encode("utf-8"))
 
