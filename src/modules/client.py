@@ -2,7 +2,7 @@ from discord import Client
 from modules import events
 from modules import memes
 from modules import settings
-from modules import antispam
+
 
 class Discord(Client):
     async def on_ready(self):
@@ -20,9 +20,6 @@ class Discord(Client):
 
         elif message.content == "!events":
             await message.channel.send(events.get_events())
-        if antispam.has_links(message):
-            await message.delete()
-            await message.channel.send("Links not allowed in this channel", delete_after=15)
 
 
 def runClient():
