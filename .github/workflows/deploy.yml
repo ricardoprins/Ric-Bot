@@ -28,6 +28,7 @@ jobs:
           resource-group: RicBot
           image: gat786/ric-bot:latest
           name: ric-bot-running
+          dns-name-label: ric-bot.southeastasia.azurecontainer.io
           command-line: pipenv run python ./src/main.py
           secure-environment-variables: DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} REDDIT_CLIENT_ID=${{ secrets.REDDIT_CLIENT_ID }} REDDIT_CLIENT_SECRET=${{ secrets.REDDIT_CLIENT_SECRET }}
           
