@@ -21,6 +21,13 @@ class Discord(Client):
         elif message.content == "!quotes":
             await message.channel.send(getQuote())
 
+        elif message.content == "!events":
+            await message.channel.send(events.get_events())
+        
+        if antispam.has_links(message):
+            await message.delete()
+            await message.channel.send("Links not allowed in this channel", delete_after=15)
+
 
 def runClient():
     loadSettings()
