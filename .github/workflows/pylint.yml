@@ -24,4 +24,4 @@ jobs:
       run: find .
     - name: Analysing the code with pylint
       run: |
-        python -m pipenv run pylint `find . |grep .py$ | xargs`
+        pylint `find . |grep .py$ | xargs`
