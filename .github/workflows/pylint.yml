@@ -3,6 +3,7 @@ name: Checking Lint and build Image on PR
 on: 
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,4 +24,4 @@ jobs:
         pipenv install pylint
     - name: Analysing the code with pylint
       run: |
-        python -m pipenv run pylint `ls -R|grep .py$|xargs`
+        python -m pipenv run pylint `find . |grep .py$ | xargs`
