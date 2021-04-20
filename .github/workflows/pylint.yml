@@ -19,9 +19,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install pipenv
-        python -m pipenv install
-        pipenv install pylint
+        python -m pip install pylint
+    - name: List Directory
+      run: find .
     - name: Analysing the code with pylint
       run: |
         python -m pipenv run pylint `find . |grep .py$ | xargs`
