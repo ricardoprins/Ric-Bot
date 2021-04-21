@@ -2,6 +2,8 @@ from discord import Client
 from modules.memes import get_memes
 from modules.settings import loadSettings, runDiscordBot
 from modules.quotes import getQuote
+from modules.antispam import has_links
+from modules.help import help
 
 
 class Discord(Client):
@@ -21,10 +23,10 @@ class Discord(Client):
         elif message.content == "!quotes":
             await message.channel.send(getQuote())
 
-        elif message.content == "!events":
-            await message.channel.send(events.get_events())
-        
-        if antispam.has_links(message):
+        elif message.content == "!help":
+            await message.channel.send(help())
+
+        if has_links(message):
             await message.delete()
             await message.channel.send("Links not allowed in this channel", delete_after=15)
 

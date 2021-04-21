@@ -14,11 +14,6 @@ async def get_memes():
         image_urls.append(post.url.encode("utf-8"))
         image_titles.append(post.title.encode("utf-8"))
 
-    lenUrl = len(image_urls)
-
-    for i in range(lenUrl):
-        modstring = str(image_urls[i]).split("b'")[1]
-        modstring = modstring[:-1]
-        image_urls[i] = modstring
+    image_urls = [i.decode() for i in image_urls]
 
     return image_urls[random.randint(0, postLimit - 1)]
