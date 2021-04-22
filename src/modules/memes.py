@@ -1,9 +1,22 @@
+"""
+This module implements the random meme generator.
+
+Function: get_memes()
+"""
 import random
 from .settings import loadReddit, getPostLimit, getSubreddits
 
 
-async def get_memes():
+async def get_memes() -> str:
+    """
+    Fetches random meme from Reddit and returns URL of the image.
 
+    This module fetches a random meme from the 21(*) hottest posts
+    from a list of subreddits(*), extracts the URL image from it
+    and then returns it as a string to be sent as a message to Discord.
+
+    Returns: Image URL of random meme from Reddit.
+    """
     reddit = loadReddit()
     postLimit = getPostLimit()
     subreddit = await reddit.subreddit(getSubreddits())

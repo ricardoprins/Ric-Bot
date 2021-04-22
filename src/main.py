@@ -1,3 +1,7 @@
+"""
+This module just runs the bot client. 
+"""
+
 from modules import client
 
 

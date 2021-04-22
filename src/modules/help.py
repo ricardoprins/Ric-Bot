@@ -1,4 +1,15 @@
-def help():
+"""
+This module implements the help command for the bot.
+
+Functions: help()
+"""
+
+
+def help() -> str:
+    """
+    Returns the command list as a string.
+    """
+
     return """
 commands
     !help:\t Help menu
