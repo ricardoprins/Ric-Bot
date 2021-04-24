@@ -1,0 +1,7 @@
+{
+    "name": "Ric-Bot",
+    "description": "A Discord bot created by Tesseract Coding",
+    "repository": "https://github.com/TesseractCoding/Ric-Bot",
+    "logo": "https://github.com/ricardoprins/Ric-Bot/blob/master/assets/logo-transparent.webp",
+    "keywords": ["discord", "bot", "python"]
+  }
